@@ -215,3 +215,36 @@ window.addEventListener("scroll", () => {
     });
 
 });
+/*=====================
+      TEMA
+======================*/
+
+const botaoTema = document.getElementById("tema");
+
+if (localStorage.getItem("tema") == "light") {
+
+    document.body.classList.add("light");
+
+    botaoTema.innerHTML = '<i class="fas fa-sun"></i>';
+
+}
+
+botaoTema.addEventListener("click", () => {
+
+    document.body.classList.toggle("light");
+
+    if (document.body.classList.contains("light")) {
+
+        localStorage.setItem("tema", "light");
+
+        botaoTema.innerHTML = '<i class="fas fa-sun"></i>';
+
+    } else {
+
+        localStorage.setItem("tema", "dark");
+
+        botaoTema.innerHTML = '<i class="fas fa-moon"></i>';
+
+    }
+
+});
